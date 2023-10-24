@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Restaurantes</title>
+</head>
+
+<body>
+    <h1>Restaurantes</h1>
+    <div id="restaurant-list">
+       
+    </div>
+    <script>
+    
+        var restaurantesJSON = [
+            {
+                "nome": "Restaurante A",
+                "tipo_cozinha": "Italiana",
+                "endereco": "123 Rua Principal, Cidade A"
+            },
+            {
+                "nome": "Restaurante B",
+                "tipo_cozinha": "Chinesa",
+                "endereco": "456 Avenida Secundária, Cidade B"
+            },
+            {
+                "nome": "Restaurante C",
+                "tipo_cozinha": "Francesa",
+                "endereco": "789 Rua Secundária, Cidade C"
+            }
+        ];
+
+        // Função para exibir informações dos restaurantes
+        function exibirRestaurantes() {
+            var restaurantList = document.getElementById("restaurant-list");
+            restaurantesJSON.forEach(function (restaurante) {
+                var restauranteDiv = document.createElement("div");
+                restauranteDiv.innerHTML = `<h2>${restaurante.nome}</h2>
+                <p><strong>Tipo de Cozinha:</strong> ${restaurante.tipo_cozinha}</p>
+                <p><strong>Endereço:</strong> ${restaurante.endereco}</p>`;
+                restaurantList.appendChild(restauranteDiv);
+            });
+        }
+
+        // Chama a função para exibir os restaurantes
+        exibirRestaurantes();
+    </script>
+</body>
+
+</html>
