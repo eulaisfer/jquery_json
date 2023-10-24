@@ -1,25 +1,24 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-    <title>Lista de Receitas</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Utilizando o JSON com Comidas</title>
 </head>
+
 <body>
-    <h1>Receitas</h1>
-    <ul id="receitas-list"></ul>
-
+    <div id="comidas"></div>
     <script>
-        $(document).ready(function() {
-            $.getJSON("receitas.json", function(data) {
-                var receitas = data;
-                var receitasList = $("#receitas-list");
-
-                $.each(receitas, function(index, receita) {
-                    var li = $("<li>").html("<h3>" + receita.nome + "</h3><p>Ingredientes: " + receita.ingredientes.join(", ") + "</p><p>Instruções: " + receita.instrucoes + "</p>");
-                    receitasList.append(li);
+        let divComidas = document.querySelector("#comidas");
+        fetch("dados.json").then((response) => {
+            response.json().then((dados) => {
+                dados.comidas.map((comida) => {
+                    divComidas.innerHTML += ` <li> ${comida.nome} - Tipo: ${comida.tipo}</li>`;
                 });
             });
         });
     </script>
 </body>
+
 </html>

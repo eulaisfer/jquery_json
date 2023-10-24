@@ -1,0 +1,17 @@
+{
+    "comidas": [
+      {
+        "nome": "Pizza",
+        "tipo": "Italiana"
+      },
+      {
+        "nome": "Sushi",
+        "tipo": "Japonesa"
+      },
+      {
+        "nome": "Hambúrguer",
+        "tipo": "Fast Food"
+      }
+    ]
+  }
+  
