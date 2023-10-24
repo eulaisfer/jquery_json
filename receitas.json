@@ -1,0 +1,13 @@
+[
+    {
+      "nome": "Lasanha",
+      "ingredientes": ["macarrão, molho de tomate, carne moída, queijo"],
+      "instrucoes": "Cozinhe o macarrão, faça um molho de tomate com carne moída e queijo, monte as camadas e asse."
+    },
+    {
+      "nome": "Salada Caesar",
+      "ingredientes": ["alface, croutons, queijo parmesão, molho Caesar"],
+      "instrucoes": "Misture todos os ingredientes em uma tigela e regue com o molho Caesar."
+    }
+  ]
+  

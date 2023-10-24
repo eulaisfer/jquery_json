@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lista de Receitas</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Receitas</h1>
+    <ul id="receitas-list"></ul>
+
+    <script>
+        $(document).ready(function() {
+            $.getJSON("receitas.json", function(data) {
+                var receitas = data;
+                var receitasList = $("#receitas-list");
+
+                $.each(receitas, function(index, receita) {
+                    var li = $("<li>").html("<h3>" + receita.nome + "</h3><p>Ingredientes: " + receita.ingredientes.join(", ") + "</p><p>Instruções: " + receita.instrucoes + "</p>");
+                    receitasList.append(li);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
